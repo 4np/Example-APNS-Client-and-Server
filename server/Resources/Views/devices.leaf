@@ -1,0 +1,41 @@
+#extend("base")
+
+#export("head") {
+    <title>Registered devices</title>
+}
+
+#export("body") {
+    #equal(hasDevices, false) {
+    <div class="jumbotron">
+        <h1 class="display-3">No devices yet</h1>
+        <p class="lead">
+            In order to send push notifications to devices, you first need to register devices.
+        </p>
+        <hr class="my-2">
+        <p>
+            Whenever the client application is launched on an iOS device it will register itself via a POST Request to <code>/push</code>.
+            See <code>DeviceController.swift</code> for more information.
+        </p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="/#()setupClient" role="button">Learn more</a>
+        </p>
+    </div>
+    }
+
+    <ul class="list-group">
+    #loop(devices, "device") {
+        <li class="list-group-item">
+            <span class="tag tag-default tag-pill float-xs-right">#(device.systemName) #(device.systemVersion)</span>
+            <h5 class="list-group-item-heading">#(device.model) <code>#(device.name)</code></h5>
+            <p class="list-group-item-text">
+                token: <code>#(device.token)</code>
+                #if(device.enabled) {
+                    <span class="tag tag-pill tag-success">enabled</span>
+                } ##else() {
+                    <span class="tag tag-pill tag-danger">disabled</span>
+                }
+            </p>
+        </li>
+    }
+    </ul>
+}

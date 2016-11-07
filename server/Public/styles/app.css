@@ -1,0 +1,19 @@
+textarea {
+    width: 500px;
+    height: 100px;
+}
+
+select {
+    width: 500px;
+}
+
+.footer .container .text-muted::after {
+    content: "Made with";
+    display: inline-block;
+    float: right;
+    background: transparent url('/images/vapor-logo.png') no-repeat;
+    background-size: 60%;
+    background-position: 80px 15px;
+    width: 200px;
+    color: #ccc;
+}
