@@ -48,4 +48,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         PushNotificationManager.sharedInstance.registerDevice(token: token)
     }
 }
-

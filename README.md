@@ -1,6 +1,6 @@
 # Vapor Client / Server Demo
 
-This project contains a [Vapor](http://vapor.codes) based server written in [Swift](http://swift.org) that provides a [RESTful](https://en.wikipedia.org/wiki/Representational_state_transfer) endpoint that allows client applications to register itself and a it serves a web frontend that allows you view registered devices and to send a push notification to a client device.
+This project contains a [Vapor](http://vapor.codes) based server written in [Swift](http://swift.org) that provides a [RESTful](https://en.wikipedia.org/wiki/Representational_state_transfer) endpoint that allows client applications to register itself and updated their status. Additionally it serves a web frontend that allows you to view registered devices to send a push notification to a client device.
 
 ## The server
 
@@ -45,6 +45,4 @@ See the accompanying [LICENSE](https://github.com/4np/Example-APNS-Client-and-Se
    limitations under the License.
 ```
 
-## Made with [Vapor](http://vapor.codes)
-
-[![Vapor Logo](https://raw.githubusercontent.com/4np/Example-APNS-Client-and-Server/master/server/Public/images/vapor-logo.png)](http://vapor.codes)
+[![Made with Vapor](https://cloud.githubusercontent.com/assets/1049693/20193301/b3328b44-a78d-11e6-8ea0-9bb07044384d.png)](http://vapor.codes)

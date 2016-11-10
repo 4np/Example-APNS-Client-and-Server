@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         refreshNotificationStatus()
     }
     
-    //MARK: Get notifcation status
+    // MARK: Get notifcation status
     
     private func refreshNotificationStatus() {
         PushNotificationManager.sharedInstance.getAuthorizationStatus { [weak self] (status) in
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         }
     }
     
-    //MARK: Button
+    // MARK: Button
     
     @IBAction func buttonPressed(_ sender: Any) {
         switch authorizationStatus {
@@ -60,7 +60,7 @@ class ViewController: UIViewController {
         }
     }
     
-    //MARK: Request authorization
+    // MARK: Request authorization
     
     func registerForPushNotifications(application: UIApplication) {
         PushNotificationManager.sharedInstance.registerForPushNotifications() { [weak self] (granted, error) in
@@ -69,5 +69,3 @@ class ViewController: UIViewController {
         }
     }
 }
-
-

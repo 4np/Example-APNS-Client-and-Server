@@ -1,0 +1,16 @@
+disabled_rules:
+  - line_length
+  - trailing_whitespace
+  - todo
+opt_in_rules:
+  - force_unwrapping
+excluded:
+  - Pods
+variable_name:
+    min_length: 2
+file_length:
+    warning: 600
+    error: 1200
+type_body_length:
+    warning: 350
+    error: 500

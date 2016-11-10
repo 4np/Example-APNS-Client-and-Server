@@ -99,7 +99,7 @@ You need to create a `apns.json` configuration file (`Config/secret/apns.json`) 
 {
     "teamIdentifier": "...teamid...",
     "APNSAuthKeyID": "...",
-    "APNSAuthKeyPath": "/Users/you/somewhere/APNsAuthKey_teamid.p8"
+    "APNSAuthKeyPath": "/path/to/APNsAuthKey_teamid.p8"
 }
 ```
 
@@ -141,7 +141,5 @@ See the accompanying [LICENSE](https://github.com/4np/Example-APNS-Client-and-Se
    limitations under the License.
 ```
 
-## Made with [Vapor](http://vapor.codes)
-
-[![Vapor Logo](https://raw.githubusercontent.com/4np/Example-APNS-Client-and-Server/master/server/Public/images/vapor-logo.png)](http://vapor.codes)
+[![Made with Vapor](https://cloud.githubusercontent.com/assets/1049693/20193301/b3328b44-a78d-11e6-8ea0-9bb07044384d.png)](http://vapor.codes)
 

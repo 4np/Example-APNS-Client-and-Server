@@ -20,8 +20,8 @@ class PushNotificationManager {
     private var token: String?
     private var authorizationStatus: UNAuthorizationStatus = .notDetermined
     
-    fileprivate func getVendorUUID() -> String {
-        return UIDevice.current.identifierForVendor!.uuidString
+    fileprivate func getVendorUUID() -> String? {
+        return UIDevice.current.identifierForVendor?.uuidString
     }
     
     fileprivate func getAdvertisingUUID() -> String? {
@@ -75,7 +75,7 @@ class PushNotificationManager {
             "systemName": UIDevice.current.systemName,
             "systemVersion": UIDevice.current.systemVersion,
             "token": token,
-            "vendorUUID": self.getVendorUUID(),
+            "vendorUUID": self.getVendorUUID() ?? "",
             "advertisingUUID": self.getAdvertisingUUID() ?? "",
             "identifier": Bundle.main.bundleIdentifier ?? "unknown",
             "version": Bundle.main.infoDictionary?["CFBundleShortVersionString"] ?? "unknown",
@@ -98,7 +98,7 @@ class PushNotificationManager {
     
     fileprivate func updateDevice(enabled: Bool) {
         let parameters: Parameters = [
-            "vendorUUID": self.getVendorUUID(),
+            "vendorUUID": self.getVendorUUID() ?? "",
             "advertisingUUID": self.getAdvertisingUUID() ?? "",
             "enabled": enabled,
             "sandbox": _isDebugAssertConfiguration()
@@ -118,5 +118,4 @@ class PushNotificationManager {
             }
         }
     }
-    
 }

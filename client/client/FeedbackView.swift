@@ -35,7 +35,7 @@ class FeedbackView: UIView {
             break
         case .notDetermined:
             backgroundColor = UIColor("#ffc72a") // yellow
-            titleLabel.text = "Undetermined wheter notifications are enabled or not"
+            titleLabel.text = "Undetermined whether notifications are enabled or not"
             button.setTitle("Request", for: .normal)
             break
         }
