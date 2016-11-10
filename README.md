@@ -13,6 +13,8 @@ $ vapor run serve
 
 ![Server Screenshot](https://cloud.githubusercontent.com/assets/1049693/20183385/672434c8-a765-11e6-9a4d-20228edfc9a8.png)
 
+![Send Push Notification Screenshot](https://cloud.githubusercontent.com/assets/1049693/20186463/63ceb0b8-a770-11e6-93b1-0f7a4912660f.png)
+
 Refer to the [more elaborate server documentation](https://github.com/4np/Example-APNS-Client-and-Server/tree/master/server) to get started.
 
 ## The client
@@ -20,6 +22,8 @@ Refer to the [more elaborate server documentation](https://github.com/4np/Exampl
 The client is a very simple App that will display whether or not it is authorized 
 
 ![iPhone Screenshots](https://cloud.githubusercontent.com/assets/1049693/20183202/d3215cec-a764-11e6-9953-b9b46b75c90a.png)
+
+![iPhone incoming notification](https://cloud.githubusercontent.com/assets/1049693/20186565/d173da3a-a770-11e6-828f-a2aab1500c5c.png)
 
 Refer to the [more elaborate client documentation](https://github.com/4np/Example-APNS-Client-and-Server/tree/master/client) to get started.
 

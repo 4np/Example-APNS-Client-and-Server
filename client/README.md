@@ -1,5 +1,7 @@
 # Client
 
+![iPhone incoming notification](https://cloud.githubusercontent.com/assets/1049693/20186565/d173da3a-a770-11e6-828f-a2aab1500c5c.png)
+
 ![iPhone Screenshots](https://cloud.githubusercontent.com/assets/1049693/20183202/d3215cec-a764-11e6-9953-b9b46b75c90a.png)
 
 ## Project Configuration
