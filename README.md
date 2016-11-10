@@ -15,15 +15,15 @@ $ vapor run serve
 
 ![Send Push Notification Screenshot](https://cloud.githubusercontent.com/assets/1049693/20186463/63ceb0b8-a770-11e6-93b1-0f7a4912660f.png)
 
-Refer to the [more elaborate server documentation](https://github.com/4np/Example-APNS-Client-and-Server/tree/master/server) to get started.
+_Refer to the [more elaborate server documentation](https://github.com/4np/Example-APNS-Client-and-Server/tree/master/server) to get started._
 
 ## The client
 
-The client is a very simple App that will display whether or not it is authorized 
+The client is a very simple App that will display whether or not it is authorized to receive push notifications and it will allow you to change that preference and update the Vapor based back-end.
 
 ![iPhone Screenshots](https://cloud.githubusercontent.com/assets/1049693/20187261/dc50fd72-a773-11e6-93b2-cc670795e45c.png)
 
-Refer to the [more elaborate client documentation](https://github.com/4np/Example-APNS-Client-and-Server/tree/master/client) to get started.
+_Refer to the [more elaborate client documentation](https://github.com/4np/Example-APNS-Client-and-Server/tree/master/client) to get started._
 
 # License
 
@@ -45,6 +45,6 @@ See the accompanying [LICENSE](https://github.com/4np/Example-APNS-Client-and-Se
    limitations under the License.
 ```
 
-## Made with Vapor
+## Made with [Vapor](http://vapor.codes)
 
-![Vapor Logo](https://raw.githubusercontent.com/4np/Example-APNS-Client-and-Server/master/server/Public/images/vapor-logo.png)
+[![Vapor Logo](https://raw.githubusercontent.com/4np/Example-APNS-Client-and-Server/master/server/Public/images/vapor-logo.png)](http://vapor.codes)

@@ -141,3 +141,7 @@ See the accompanying [LICENSE](https://github.com/4np/Example-APNS-Client-and-Se
    limitations under the License.
 ```
 
+## Made with [Vapor](http://vapor.codes)
+
+[![Vapor Logo](https://raw.githubusercontent.com/4np/Example-APNS-Client-and-Server/master/server/Public/images/vapor-logo.png)](http://vapor.codes)
+
