@@ -1,5 +1,7 @@
 # Push Notification Server
 
+![Server Screenshot](https://cloud.githubusercontent.com/assets/1049693/20183385/672434c8-a765-11e6-9a4d-20228edfc9a8.png)
+
 This server setup has been developed and tested using the following versions.
 
 |Dependency|Version|
@@ -65,6 +67,17 @@ curl -sL toolbox.vapor.sh | bash
 vapor self update
 ```
 
+### Generate Xcode project
+
+While you can run the server from the command line on Mac OS X or Ubuntu (see below), it might be convenient to open and run the project in Xcode as well. Execute the following command to generate the Xcode project:
+
+```
+vapor xcode
+```
+
+_Note: the Xcode project file is in .gitignore and will not be committed to Git_
+
+
 ## Libcurl
 
 Reinstall libcurl with http/2 support.
@@ -102,4 +115,25 @@ vapor build --clean
 vapor run serve
 ```
 
-Your server should now be running on http://localhost:8080
+_Your server should now be running on http://localhost:8080_
+
+# License
+
+See the accompanying [LICENSE](https://github.com/4np/Example-APNS-Client-and-Server/blob/master/LICENSE) file for more information.
+
+```
+   Copyright 2016 Jeroen Wesbeek
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+```
+

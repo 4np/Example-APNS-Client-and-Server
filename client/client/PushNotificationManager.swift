@@ -13,7 +13,7 @@ import Alamofire
 import AdSupport
 
 class PushNotificationManager {
-    let endpoint = "https://beta.osx.eu/devices"
+    let endpoint = "https://your.hostname.com/devices"
     public static let sharedInstance = PushNotificationManager()
     private let center = UNUserNotificationCenter.current()
     private var application: UIApplication?
