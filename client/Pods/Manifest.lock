@@ -1,12 +1,24 @@
 PODS:
   - Alamofire (4.0.1)
+  - CocoaLumberjack/Core (3.0.0)
+  - CocoaLumberjack/Default (3.0.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (3.0.0):
+    - CocoaLumberjack/Default
+  - CocoaLumberjack/Swift (3.0.0):
+    - CocoaLumberjack/Extensions
+  - UIColor_Hex_Swift (3.0.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
+  - CocoaLumberjack/Swift
+  - UIColor_Hex_Swift
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  CocoaLumberjack: c823149bccc5519a9447aeb433be7b1212a7d6a5
+  UIColor_Hex_Swift: 95f718452092a3efc8a827dffd2c04d3237be02d
 
-PODFILE CHECKSUM: 72da11ff0ddcbd2d9e31f608fc05f1a511958324
+PODFILE CHECKSUM: 9ea838fea57cd2080121b744a153953a326d22c0
 
 COCOAPODS: 1.2.0.beta.1

@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+import UIColor_Hex_Swift
 
 class FeedbackView: UIView {
     @IBOutlet weak var titleLabel: UILabel!
@@ -23,17 +24,17 @@ class FeedbackView: UIView {
         // background color will represent authorization status
         switch authorizationStatus {
         case .authorized:
-            backgroundColor = UIColor.green
+            backgroundColor = UIColor("#76bd22") // green
             titleLabel.text = "Notifications are enabled"
             button.setTitle("Change settings", for: .normal)
             break
         case .denied:
-            backgroundColor = UIColor.red
+            backgroundColor = UIColor("#ff681d") // orangy red
             titleLabel.text = "Notifications are disabled"
             button.setTitle("Change settings", for: .normal)
             break
         case .notDetermined:
-            backgroundColor = UIColor.orange
+            backgroundColor = UIColor("#ffc72a") // yellow
             titleLabel.text = "Undetermined wheter notifications are enabled or not"
             button.setTitle("Request", for: .normal)
             break

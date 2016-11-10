@@ -21,9 +21,7 @@ Refer to the [more elaborate server documentation](https://github.com/4np/Exampl
 
 The client is a very simple App that will display whether or not it is authorized 
 
-![iPhone Screenshots](https://cloud.githubusercontent.com/assets/1049693/20183202/d3215cec-a764-11e6-9953-b9b46b75c90a.png)
-
-![iPhone incoming notification](https://cloud.githubusercontent.com/assets/1049693/20186565/d173da3a-a770-11e6-828f-a2aab1500c5c.png)
+![iPhone Screenshots](https://cloud.githubusercontent.com/assets/1049693/20187261/dc50fd72-a773-11e6-93b2-cc670795e45c.png)
 
 Refer to the [more elaborate client documentation](https://github.com/4np/Example-APNS-Client-and-Server/tree/master/client) to get started.
 

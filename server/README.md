@@ -4,7 +4,7 @@
 
 ![Send Push Notification Screenshot](https://cloud.githubusercontent.com/assets/1049693/20186463/63ceb0b8-a770-11e6-93b1-0f7a4912660f.png)
 
-![iPhone incoming notification](https://cloud.githubusercontent.com/assets/1049693/20186565/d173da3a-a770-11e6-828f-a2aab1500c5c.png)
+![iPhone Screenshots](https://cloud.githubusercontent.com/assets/1049693/20187261/dc50fd72-a773-11e6-93b2-cc670795e45c.png)
 
 This server setup has been developed and tested using the following versions.
 

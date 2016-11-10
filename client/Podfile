@@ -4,4 +4,6 @@ use_frameworks!
 
 target 'client' do
     pod 'Alamofire', '~> 4.0'
+    pod 'CocoaLumberjack/Swift'
+    pod 'UIColor_Hex_Swift'
 end
