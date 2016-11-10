@@ -73,26 +73,28 @@ final class PushNotificationController: ResourceRepresentable {
             let options = try Options(topic: identifier, teamId: teamIdentifier, keyId: APNSAuthKeyID, keyPath: APNSAuthKeyPath)
             let vaporAPNS = try VaporAPNS(options: options)
             let payload = Payload(title: title, body: body)
-            let pushMessage = ApplePushMessage(priority: .immediately, payload: payload, deviceToken: deviceToken, sandbox: device.sandbox)
-            let result = vaporAPNS.send(applePushMessage: pushMessage)
+            let pushMessage = ApplePushMessage(priority: .immediately, payload: payload, sandbox: device.sandbox)
+            let result = vaporAPNS.send(pushMessage, to: deviceToken)
+            
+            debugPrint("result: \(result)")
 
             // handle result
             switch result {
-            case .success(let messageID, let _):
+            case .success(let messageID, _, _):
                 response["feedback"] = "Successfully sent a push notification to \(device.model!) '\(device.name!)'".makeNode()
                 response["device"] = try device.makeNode()
                 log.info("sent push notification \(messageID) to device \(id)")
                 break
-            case .error(_, let error):
+            case .error(_, _, let error):
                 response["device"] = try device.disable().makeNode()
+                log.error("Could not send push notification (\(error))")
                 throw Abort.custom(status: .serviceUnavailable, message: "Could not sent the push notification (\(error))")
-                break
-            case .networkError(_, let error):
+            case .networkError(let error):
                 response["device"] = try device.disable().makeNode()
+                log.error("Could not send push notification (\(error))")
                 throw Abort.custom(status: .serviceUnavailable, message: "Could not sent the push notification (\(error))")
-                break
             }
-        } catch Abort.custom(let status, let message) {
+        } catch Abort.custom(_, let message) {
             response["error"] = message.makeNode()
         } catch {
             response["error"] = "An unknown error occured"

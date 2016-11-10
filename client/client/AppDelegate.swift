@@ -12,13 +12,12 @@ import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
-
+    var center = UNUserNotificationCenter.current()
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        registerForPushNotifications(application: application)
-        
+        PushNotificationManager.sharedInstance.setDelegate(delegate: self, andApplication: application)
         return true
     }
 
@@ -43,45 +42,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-    func registerForPushNotifications(application: UIApplication) {
-        let center = UNUserNotificationCenter.current()
-        center.delegate = self
-        center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
-            guard granted else {
-                return
-            }
-            
-            UIApplication.shared.registerForRemoteNotifications()
-        }
-    }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         let token = deviceToken.hexDescription
-        
-        let parameters: Parameters = [
-            "name": UIDevice.current.name,
-            "model": UIDevice.current.model,
-            "systemName": UIDevice.current.systemName,
-            "systemVersion": UIDevice.current.systemVersion,
-            "token": token,
-            "identifier": Bundle.main.bundleIdentifier ?? "unknown",
-            "version": Bundle.main.infoDictionary?["CFBundleShortVersionString"] ?? "unknown",
-            "build": Bundle.main.infoDictionary?["CFBundleVersion"] ?? "unknown",
-            "sandbox": _isDebugAssertConfiguration()
-        ]
-        
-        let url = "http://your.server.address:8080/devices"
-        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
-            switch response.result {
-            case .success(let json):
-                debugPrint("registered device token (\(json))")
-                break
-            case .failure(let error):
-                debugPrint("could not register device token (\(error))")
-                break
-            }
-        }
+        PushNotificationManager.sharedInstance.registerDevice(token: token)
     }
 }
 

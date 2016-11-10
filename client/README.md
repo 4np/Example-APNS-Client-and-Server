@@ -4,7 +4,7 @@
 
 ### Linked Frameworks and Libraries
 
-![Linked Frameworks and Libraries](https://cloud.githubusercontent.com/assets/1049693/20052877/32ec2fc6-a4d6-11e6-9c7b-9b24c281e96c.png)
+![Linked Frameworks and Libraries](https://cloud.githubusercontent.com/assets/1049693/20182495/3fc77758-a762-11e6-8d8b-a0f9bd232da6.png)
 
 ### Signing
 

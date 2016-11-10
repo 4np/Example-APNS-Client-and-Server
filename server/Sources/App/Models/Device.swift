@@ -13,6 +13,8 @@ import Fluent
 
 struct Device: Model {
     var id: Node?
+    var vendorUUID: String?
+    var advertisingUUID: String?
     var name: String?
     var model: String?
     var systemName: String?
@@ -31,6 +33,8 @@ struct Device: Model {
 extension Device: NodeConvertible {
     init(node: Node, in context: Context) throws {
         id = node["id"]
+        vendorUUID = node["vendorUUID"]?.string
+        advertisingUUID = node["advertisingUUID"]?.string
         name = node["name"]?.string
         model = node["model"]?.string
         systemName = node["systemName"]?.string
@@ -45,6 +49,8 @@ extension Device: NodeConvertible {
         return try Node.init(node:
             [
                 "id": id,
+                "vendorUUID": vendorUUID,
+                "advertisingUUID": advertisingUUID,
                 "name": name,
                 "model": model,
                 "systemName": systemName,
@@ -64,6 +70,8 @@ extension Device: Preparation {
     static func prepare(_ database: Database) throws {
         try database.create("devices") { devices in
             devices.id()
+            devices.string("vendorUUID")
+            devices.string("advertisingUUID")
             devices.string("name")
             devices.string("model")
             devices.string("systemName")
@@ -85,6 +93,8 @@ extension Device: Preparation {
 extension Device {
     mutating func merge(updates: Device) {
         id = updates.id ?? id
+        vendorUUID = updates.vendorUUID ?? vendorUUID
+        advertisingUUID = updates.advertisingUUID ?? advertisingUUID
         name = updates.name ?? name
         model = updates.model ?? model
         systemName = updates.systemName ?? systemName
@@ -111,5 +121,35 @@ extension Device {
         device.enabled = true
         try device.save()
         return device
+    }
+}
+
+// MARK: Get existing device based on uuid and / or token
+
+extension Device {
+    func getExistingDevice() -> Device? {
+        // try to get the Device based on token
+        do {
+            if let token = self.token, let existingDevice = try Device.query().filter("token", token).first() {
+                return existingDevice
+            }
+        } catch { }
+        
+        // try to get the Device based on vendor uuid
+        do {
+            if let vendorUUID = self.vendorUUID, let existingDevice = try Device.query().filter("vendorUUID", vendorUUID).first() {
+                return existingDevice
+            }
+        } catch { }
+
+        // try to get the Device based on advertising uuid
+        do {
+            if let advertisingUUID = self.advertisingUUID, let existingDevice = try Device.query().filter("advertisingUUID", advertisingUUID).first() {
+                return existingDevice
+            }
+        } catch { }
+        
+        // no luck
+        return nil
     }
 }

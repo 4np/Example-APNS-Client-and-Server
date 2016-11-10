@@ -29,10 +29,15 @@
             <h5 class="list-group-item-heading">#(device.model) <code>#(device.name)</code></h5>
             <p class="list-group-item-text">
                 token: <code>#(device.token)</code>
+                <span class="tag tag-pill tag-info float-xs-right">#if(device.sandbox) {sandbox} ##else() {production}</span>
+            </p>
+            <p class="list-group-item-text">
+                vendor uuid: <code>#(device.vendorUUID)</code>
+                #equal(device.advertisingUUID, "") {} ##else() { advertising uuid: <code>#(device.advertisingUUID)</code>}
                 #if(device.enabled) {
-                    <span class="tag tag-pill tag-success">enabled</span>
+                    <span class="tag tag-pill tag-success float-xs-right">enabled</span>
                 } ##else() {
-                    <span class="tag tag-pill tag-danger">disabled</span>
+                    <span class="tag tag-pill tag-danger float-xs-right">disabled</span>
                 }
             </p>
         </li>

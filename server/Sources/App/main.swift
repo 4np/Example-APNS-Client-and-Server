@@ -10,8 +10,8 @@ let logProvider = SwiftyBeaverProvider(destinations: [console])
 
 // initialize Droplet
 let drop = Droplet()
-try drop.preparations.append(Device.self)
-try drop.addProvider(logProvider)
+drop.preparations.append(Device.self)
+drop.addProvider(logProvider)
 try drop.addProvider(VaporMySQL.Provider.self)
 
 let log = drop.log.self

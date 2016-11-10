@@ -15,6 +15,9 @@
 		F36D7C381DCB7FA400230362 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F36D7C361DCB7FA400230362 /* LaunchScreen.storyboard */; };
 		F36D7C411DCB838900230362 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F36D7C401DCB838900230362 /* UserNotifications.framework */; };
 		F36D7C431DCB83F800230362 /* NSData+hexDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36D7C421DCB83F800230362 /* NSData+hexDescription.swift */; };
+		F3F08D901DD0C8C3008CA37F /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F08D8F1DD0C8C3008CA37F /* PushNotificationManager.swift */; };
+		F3F08D921DD0CEAB008CA37F /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F08D911DD0CEAB008CA37F /* FeedbackView.swift */; };
+		F3F8B8EE1DD4C08C00C55723 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F8B8ED1DD4C08C00C55723 /* AdSupport.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 		F36D7C3F1DCB809800230362 /* client.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = client.entitlements; sourceTree = "<group>"; };
 		F36D7C401DCB838900230362 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		F36D7C421DCB83F800230362 /* NSData+hexDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSData+hexDescription.swift"; sourceTree = "<group>"; };
+		F3F08D8F1DD0C8C3008CA37F /* PushNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
+		F3F08D911DD0CEAB008CA37F /* FeedbackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
+		F3F8B8ED1DD4C08C00C55723 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3F8B8EE1DD4C08C00C55723 /* AdSupport.framework in Frameworks */,
 				F36D7C411DCB838900230362 /* UserNotifications.framework in Frameworks */,
 				0DCC08725168F27FFE310A01 /* Pods_client.framework in Frameworks */,
 			);
@@ -58,6 +65,7 @@
 		AB628D5137EAB0C20E6BA910 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F3F8B8ED1DD4C08C00C55723 /* AdSupport.framework */,
 				F36D7C401DCB838900230362 /* UserNotifications.framework */,
 				EA3F43A3989C5E856E610EB0 /* Pods_client.framework */,
 			);
@@ -87,12 +95,14 @@
 			children = (
 				F36D7C3F1DCB809800230362 /* client.entitlements */,
 				F36D7C2D1DCB7FA400230362 /* AppDelegate.swift */,
+				F36D7C421DCB83F800230362 /* NSData+hexDescription.swift */,
+				F3F08D8F1DD0C8C3008CA37F /* PushNotificationManager.swift */,
 				F36D7C2F1DCB7FA400230362 /* ViewController.swift */,
+				F3F08D911DD0CEAB008CA37F /* FeedbackView.swift */,
 				F36D7C311DCB7FA400230362 /* Main.storyboard */,
 				F36D7C341DCB7FA400230362 /* Assets.xcassets */,
 				F36D7C361DCB7FA400230362 /* LaunchScreen.storyboard */,
 				F36D7C391DCB7FA400230362 /* Info.plist */,
-				F36D7C421DCB83F800230362 /* NSData+hexDescription.swift */,
 			);
 			path = client;
 			sourceTree = "<group>";
@@ -226,7 +236,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F36D7C431DCB83F800230362 /* NSData+hexDescription.swift in Sources */,
+				F3F08D921DD0CEAB008CA37F /* FeedbackView.swift in Sources */,
 				F36D7C301DCB7FA400230362 /* ViewController.swift in Sources */,
+				F3F08D901DD0C8C3008CA37F /* PushNotificationManager.swift in Sources */,
 				F36D7C2E1DCB7FA400230362 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
