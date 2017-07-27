@@ -39,11 +39,11 @@ class PushNotificationManager {
 
     final public func registerForPushNotifications(completionHandler: @escaping (Bool, Error?) -> ()) {
         center.requestAuthorization(options: [.alert, .sound, .badge]) { [weak self] (granted, error) in
-            if granted {
-                self?.application?.registerForRemoteNotifications()
-            }
-
             DispatchQueue.main.async {
+                if granted {
+                    self?.application?.registerForRemoteNotifications()
+                }
+                
                 completionHandler(granted, error)
             }
         }
